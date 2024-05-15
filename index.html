@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/yexagifts.ico">
+    <title>YexaGifts</title>
+    
+</head>
+<body>
+    <div id="navbar" class="navbar">
+        <img onclick="location.href='#slider'" src="img/logo.png" alt="Logo YexaGifts" class="logoHome">
+        <div
+            style="padding-right: 50px; gap: 3vh; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+            <button onclick="location.href='#slider'" class="opcionesBtn">Inicio</button>
+            <button onclick="location.href='#slider'" class="opcionesBtn">Catálogo</button>
+            <button onclick="window.open('https://ig.me/m/yexa.gifts', '_blank')" class="opcionesBtn">Contacto</button>
+            <button onclick="location.href='#info'" class="opcionesBtn">Acerca de</button>
+        </div>
+        <div class="divMenuIcon">
+            <button onclick="toggleMenu()" alt="menu" class="menuIcon"></button>
+            
+            <ul id="menu" class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><img src="img/igicon.png" alt="Instagram" style="padding-right: 10px; width: 20px;"><a href="https://ig.me/m/yexa.gifts" target="_blank">Contacto</a></li>
+                <li><a href="#">Acerca de</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div id="slider" class="slider">
+        <div style="padding: 0; margin: 0;">
+            <div class="posDiv">
+                <p class="textP">Encuentra el regalo perfecto para este día de la madre!</p>
+                <button class="vercatBtn">Ver catálogo</button>
+            </div>
+            <img src="img/slider.jpeg" style="height: 100%; width: auto; right: 0;">
+        </div>
+    </div>
+
+    <div class="bodyF">
+        <p id="info" style="font-size: 30px;">Proident labore aute occaecat reprehenderit ipsum nisi reprehenderit ullamco. Enim incididunt consequat incididunt nostrud ea. Ullamco sit sint ipsum ad laborum enim deserunt sint irure consectetur culpa sit magna eiusmod. Deserunt magna quis anim labore qui magna quis esse adipisicing in anim laboris.Labore aute sit exercitation Lorem. Nostrud ipsum id amet in ut proident. Amet sunt anim sit culpa eu magna minim do aliqua labore fugiat id aute. Adipisicing ea nisi dolor anim excepteur commodo enim nostrud nostrud nulla ex consequat anim. Ullamco cillum aliquip laborum adipisicing ullamco ad non eu commodo ipsum tempor ullamco dolor dolore.Cupidatat aute ullamco ea aliqua. Ullamco pariatur quis dolore labore adipisicing non aliquip voluptate minim sint. Mollit duis cupidatat veniam dolore eu dolor aliquip aute enim ex pariatur.Irure eu esse aliquip qui elit exercitation. Excepteur veniam dolor eiusmod sint incididunt duis proident consectetur sunt non occaecat aliqua. Tempor dolore occaecat mollit sit anim sunt ut cillum proident nostrud sint sit ex nostrud. Nostrud exercitation magna ullamco est anim laborum excepteur excepteur consequat labore reprehenderit ullamco dolor. Laboris anim enim qui adipisicing. Fugiat aliquip duis ut proident.Ea cupidatat exercitation Lorem culpa laboris ullamco proident nisi amet esse occaecat minim. Cupidatat qui nostrud eu nisi esse elit nostrud amet deserunt eiusmod excepteur duis dolor. Laborum amet est minim ad commodo. Exercitation qui commodo consequat proident eu. Proident et nisi reprehenderit excepteur. Veniam elit ex proident deserunt aliqua irure velit id ullamco sit eu dolor.Tempor ad amet adipisicing minim exercitation irure exercitation eu Lorem. Veniam laboris qui culpa excepteur minim duis ad officia aute ullamco. Magna in do quis eiusmod consectetur dolore aliqua nulla exercitation cillum irure culpa ullamco. In nulla dolor enim non fugiat laborum do quis. Duis qui enim magna amet Lorem sunt minim incididunt veniam non duis. Enim velit occaecat do culpa sit cillum.Fugiat sunt commodo exercitation pariatur consequat nulla ullamco dolore sint sint. Irure ex ullamco consectetur excepteur. Sint do ullamco nulla aliqua ut. Ullamco id ut voluptate labore enim nisi commodo dolor tempor ipsum amet.Amet exercitation mollit fugiat mollit voluptate. Consequat ut id nostrud anim ipsum reprehenderit commodo pariatur aliquip laborum magna in pariatur commodo. Velit anim Lorem excepteur dolor eiusmod. Sit consequat nostrud culpa proident minim magna quis nulla ea officia ex ut. Qui tempor aute exercitation incididunt cillum incididunt est. Qui anim incididunt ullamco velit tempor irure non mollit. Nulla ullamco proident voluptate anim labore quis labore esse consectetur in labore nulla cillum sint.</p>
+    </div>
+    
+</body>
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        var navbar = document.getElementById("navbar");
+        var menu = document.getElementById("menu");
+
+        if (prevScrollpos > currentScrollPos) {
+            navbar.classList.remove("hidden");
+            menu.classList.remove("hidden");
+        } else {
+            navbar.classList.add("hidden");
+            menu.classList.add("hidden");
+        }
+
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+<script>
+        var prevScrollpos = window.pageYOffset;
+
+        // Función para cambiar el menú según el scroll
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var currentScrollPos = window.pageYOffset;
+
+            if (menu.style.top === "-600%") {
+                menu.style.top = "100%"; // Mostrar el menú
+                if (prevScrollpos >= currentScrollPos) { // Si el scroll previo es mayor que el actual
+                    menu.style.top = "100%"; // Mostrar el menú
+                } else {
+                    menu.style.top = "-600%"; // Ocultar el menú
+                }
+                prevScrollpos = currentScrollPos;
+            } else {
+                menu.style.top = "-600%";
+            }
+
+        }
+
+        // Event listener para el scroll
+        window.addEventListener("scroll", toggleMenu);
+</script>
+
+</html>
