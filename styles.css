@@ -28,6 +28,50 @@ html {
     font-size: 9vh;
     width: 50%;
     color: white;
+
+    animation: inicio 1s;
+}
+
+.vercatBtn{
+    border-radius: 2vh;
+    color: #74621a;
+    background-color: #e9d06c;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 5vh;
+    padding: 3vh;
+    transition: ease-in-out 0.3s;
+    
+    animation: inicio 1s;
+}
+
+
+.vercatBtnCelulares{
+    display: none;
+    color: #74621a;
+    background-color: #e9d06c;
+    border: none;
+    font-family: 'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+    font-weight: 800;
+    transition: ease-in-out 0.3s;
+
+    animation: inicio 1s;
+
+    z-index: 4;
+    font-size: 2vh;
+    padding: 1vh;
+    border-radius: 1vh;
+}
+
+.vercatBtn:hover{
+    cursor: pointer;
+    scale: 1.1;
+    transition: ease-in-out 0.3s;
 }
 
 nav {
@@ -37,15 +81,11 @@ nav {
 }
 
 .navbar{
-    padding: 0px 10vh 0 3vh;
     background-color: #FFE680;
     height: 70px;
     width: 100%;
-    padding: 0px 3vh;
-    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
     top: 0;
     transition: top 0.3s;
@@ -55,6 +95,14 @@ nav {
 
 .navbar.hidden {
     top: -72px;
+}
+
+.imgslider{
+    height: 100%;
+    width: auto;
+    z-index: 2;
+
+    animation: inicio 1s;
 }
 
 .slider{
@@ -106,12 +154,64 @@ nav {
 
 .posDiv{
     position: absolute;
-    top: 25vh;
+    top: 15vh;
     left: 10vh;
 }
 
 .bodyF{
-    padding: 2vh 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 40;
+
+}
+
+.opcDiv{
+    display: none;
+    border-radius: 2vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-image: url(img/cat.png);
+
+    height: 25%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 4vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.catalogoEMBED{
+    margin-top: 2vh;
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.catalogoEMBED.visible {
+    animation: inicio 2s;
+}
+
+.catalogoEMBED.oculto {
+    opacity: 0;
+}
+
+@keyframes inicio {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -122,11 +222,12 @@ nav {
         display: flex;
     }
     .slider{
-        height: 50vh;
+        height: 40vh;
         justify-content: start;
         background-color: #9ec1df;
     }
     .textP{
+        z-index: 4;
         font-size: 2vh;
         width: 100%;
     }
@@ -137,12 +238,20 @@ nav {
         width: 30%;
     }
     .vercatBtn{
-        font-size: 2vh;
-        padding: 1vh;
-        border-radius: 1vh;
+        display: none;
     }
-    .bodyF {
-        padding: 20px 50px;
+    .vercatBtnCelulares{
+        display: flex;
+    }
+    .bodyF{
+        height: 53vh;
+        width: 100%;
+    }
+    .opcDiv{
+        display: flex;
+    }
+    .catalogoEMBED{
+        display: none;
     }
 }
 
@@ -165,40 +274,4 @@ nav {
     color: white;
     background-color: #e9d06c;
     transition: ease-in-out 0.3s;
-}
-
-.menu {
-    display: block;
-    list-style-type: none;
-    position: absolute;
-    background-color: #FFF8E5;
-    right: 0;
-    width: 60%;
-    top: -600%;
-    padding: 0 0 0 20px;
-    margin: 0;
-    z-index: 1;
-    transition: top 0.3s;
-    border-radius: 0 0 2vh 2vh;
-    box-shadow: -5px 10px 10px #74621a94;
-}
-
-.menu li {
-    font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    padding: 0;
-    color: white;
-    text-decoration: none;
-    text-transform: none;
-    margin: 10px 0;
-}
-
-.menu li a{
-    color: #74621a;
-    text-decoration: none;
-}
-
-.menu.hidden{
-    top: -600%;
 }
