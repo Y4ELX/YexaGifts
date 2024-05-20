@@ -31,21 +31,34 @@
                 style="border: 0px; width: 90%; height: 100vh;" src="https://heyzine.com/flip-book/a742e094eb.html"></iframe>
         </div>
 
-        <div onclick="abrirCatalogo()" id="catalogo" class="opcDiv">
+        <div style="background-image: url(img/cat.png);" onclick="abrirCatalogo()" id="catalogocelular" class="opcDiv">
         </div>
 
 
-        <div id="" class="opcDiv">
+        <div style="background-image: url();" id="" class="opcDiv">
             </div>
 
-        <div id="" class="opcDiv">
+        <div style="background-image: url();" id="" class="opcDiv">
             </div>
 
     </div>
     
 </body>
 
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+            const target1 = document.getElementById('catalogocelular');
+            const target2 = document.getElementById('contacto');
+            const target3 = document.getElementById('redes');
 
+            target1.addEventListener('click', () => {
+                target1.classList.toggle('clicked');
+                setTimeout(() => {
+                    target1.classList.toggle('clicked');
+                },300);
+            });
+        });
+</script>
 <script>
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
@@ -64,7 +77,9 @@
 </script>
 <script>
     function abrirCatalogo(){
-        window.open('catalogo.html', '_blank');
+        setTimeout(() => {
+            window.open('catalogo.html', '_blank');
+        }, 1000);
     }
 </script>
 <script>

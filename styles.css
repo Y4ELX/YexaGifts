@@ -34,8 +34,8 @@ html {
 
 .vercatBtn{
     border-radius: 2vh;
-    color: #74621a;
-    background-color: #e9d06c;
+    color: #ac9121;
+    background-color: #FFE680;
     border: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 800;
@@ -49,8 +49,8 @@ html {
 
 .vercatBtnCelulares{
     display: none;
-    color: #74621a;
-    background-color: #e9d06c;
+    color: #ac9121;
+    background-color: #FFE680;
     border: none;
     font-family: 'Segoe UI',
         Tahoma,
@@ -63,7 +63,7 @@ html {
     animation: inicio 1s;
 
     z-index: 4;
-    font-size: 2vh;
+    font-size: 1.7vh;
     padding: 1vh;
     border-radius: 1vh;
 }
@@ -173,19 +173,25 @@ nav {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    background-image: url(img/cat.png);
-
     height: 25%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 900;
     color: white;
+    background-color: #FFE680;
     font-size: 4vh;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 90%;
+
+    box-shadow: 0px 5px 0px #ac9121;
 }
+
+.opcDiv.clicked {
+    transform: translate(0, 10%);
+    box-shadow: 0px 0px 0px transparent;
+}
+
 .catalogoEMBED{
     margin-top: 2vh;
     width: 60%;
