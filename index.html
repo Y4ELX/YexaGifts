@@ -28,7 +28,7 @@
 
         <div id="catalogo"  class="catalogoEMBED">
             <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
-                style="border: 0px; width: 90%; height: 100vh;" src="https://heyzine.com/flip-book/a742e094eb.html"></iframe>
+                style="border: 0px; width: 90%; height: 100vh;" src="CatalogoFuente.html"></iframe>
         </div>
 
         <div style="background-image: url(img/cat.png);" onclick="abrirCatalogo()" id="catalogocelular" class="opcDiv">
@@ -76,11 +76,16 @@
     }
 </script>
 <script>
-    function abrirCatalogo(){
-        setTimeout(() => {
-            window.open('catalogo.html', '_blank');
-        }, 1000);
-    }
+        function abrirCatalogo() {
+            setTimeout(() => {
+                window.open('CatalogoFuente.html', '_blank');
+            }, 500);
+        }
+        function abrirCatalogo() {
+                setTimeout(() => {
+                    window.open('CatalogoFuente.html', '_blank');
+                }, 500);
+            }
 </script>
 <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -103,6 +108,16 @@
 
                 observer.observe(target);
             });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(()=>{
+                var canvasElement = document.getElementById('canvas');
+
+                canvasElement.style.backgroundColor = 'red';
+            }, 20000);
+        });
 </script>
 
 </html>
